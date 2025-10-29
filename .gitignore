@@ -1,0 +1,16 @@
+# Ignore raw data
+data/raw/
+*.csv
+
+# Ignore system files
+*.log
+*.dat
+*.ini
+*.exe
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore VS Code settings
+.vscode/
