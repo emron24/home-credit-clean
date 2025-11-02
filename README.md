@@ -29,6 +29,19 @@ The notebook demonstrates an end-to-end workflow:
 9. Summarize insights
 
 ---
+## 📓 Notebooks
+
+This project is organized into step-by-step Jupyter notebooks:
+
+- [01 Data Loading](notebooks/01_data_loading.ipynb)  
+  *Load the dataset, inspect structure, and perform initial checks.*
+
+- [02 Feature Engineering](notebooks/02_feature_engineering.ipynb)  
+  *Handle missing values, encode categorical variables, and prepare features.*
+
+- [03 Model Preparation](notebooks/03_model_preparation.ipynb)  
+  *Scale features, split data, train a baseline logistic regression model, and evaluate with ROC AUC and feature importance.*
+
 
 ## 📊 Dataset
 - **Source**: Home Credit Default Risk dataset (Kaggle)
