@@ -112,3 +112,13 @@ This project is organized into step-by-step Jupyter notebooks:
 ---
 
 ## 📂 Repository Structure
+
+project1-home/ │ ├── data/ # (Optional) Raw or processed data files (not uploaded if large) ├── notebooks/ # Jupyter notebooks for each project stage │ ├── 01_data_loading.ipynb │ ├── 02_feature_engineering.ipynb │ └── 03_model_preparation.ipynb ├── README.md # Project documentation └── requirements.txt # Python dependencies (if applicable)
+
+
+---
+
+## 🙌 Closing Note
+This project demonstrates my ability to take a messy, real-world dataset and transform it into meaningful insights through **data cleaning, EDA, visualization, and baseline modeling**.  
+It is part of my **Data Analyst portfolio**, with room to expand into advanced modeling for Data Science roles.
+
