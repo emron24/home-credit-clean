@@ -112,17 +112,14 @@ This project is organized into step-by-step Jupyter notebooks:
 ---
 
 ## 📂 Repository Structure
-
 project1-home/
-│ ├── data/
-# (Optional) Raw or processed data files (not uploaded if large) 
-├── notebooks/# Jupyter notebooks for each project stage
-│
-   ├── 01_data_loading.ipynb │
-   ├── 02_feature_engineering.ipynb │
-   └── 03_model_preparation.ipynb
- ├── README.md # Project documentation 
- └── requirements.txt # Python dependencies (if applicable)
+│ ├── data/ # (Optional) Raw or processed data files (not uploaded if large)
+├── notebooks/ # Jupyter notebooks for each project stage 
+│ ├── 01_data_loading.ipynb 
+│ ├── 02_feature_engineering.ipynb 
+│ └── 03_model_preparation.ipynb 
+├── README.md # Project documentation 
+└── requirements.txt # Python dependencies (if applicable)
 
 
 
