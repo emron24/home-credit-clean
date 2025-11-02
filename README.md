@@ -111,9 +111,21 @@ This project is organized into step-by-step Jupyter notebooks:
 
 ---
 
-## 📂 Repository Structure
+## 📁 Project File Structure
 
-project1-home/ │ ├── data/ │ ├── raw/ # Downloaded CSV files will go here │ └── processed/ # Cleaned, engineered data (optional) ├── notebooks/ │ ├── 01_data_loading.ipynb # Initial exploration and merging (Load from Drive here) │ ├── 02_feature_engineering.ipynb │ └── 03_model_preparation.ipynb ├── .gitignore # Excludes large files (like /data/raw) and virtual environments ├── README.md # This file! Project goals, structure, and instructions. └── requirements.txt # List of Python packages required for the project.
+```text
+project1-home/
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+├── notebooks/
+│   ├── 01_data_loading.ipynb
+│   ├── 02_feature_engineering.ipynb
+│   └── 03_model_preparation.ipynb
+├── .gitignore
+├── README.md
+└── requirements.txt
 
 ---
 
