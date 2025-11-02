@@ -111,6 +111,11 @@ This project is organized into step-by-step Jupyter notebooks:
 
 ---
 
+## 🙌 Closing Note
+This project demonstrates my ability to take a messy, real-world dataset and transform it into meaningful insights through **data cleaning, EDA, visualization, and baseline modeling**.  
+It is part of my **Data Analyst portfolio**, with room to expand into advanced modeling for Data Science roles.
+
+
 ## 📁 Project File Structure
 
 ```text
@@ -129,7 +134,4 @@ project1-home/
 
 ---
 
-## 🙌 Closing Note
-This project demonstrates my ability to take a messy, real-world dataset and transform it into meaningful insights through **data cleaning, EDA, visualization, and baseline modeling**.  
-It is part of my **Data Analyst portfolio**, with room to expand into advanced modeling for Data Science roles.
 
