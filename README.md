@@ -1,122 +1,112 @@
-# 🏦 Credit Risk Analysis Project
-
+Absolutely, Emran — here’s a restructured and polished version of your README that’s recruiter-ready, clearly organized, and aligned with your portfolio goals. I’ve grouped related sections, improved flow, and added clarity while preserving your original content.
 
 ---
 
-## 📢 Summary
-This project highlights my ability to:
+# 🏦 Home Credit Risk Analysis  
+*A Portfolio Project for Data Analyst Roles*
+
+---
+
+## 📢 Summary  
+This project showcases my ability to:
 - Clean and prepare messy real-world data  
 - Perform exploratory analysis and visualization  
 - Communicate insights clearly  
 - Build and evaluate a baseline predictive model  
 
-It is designed as a **portfolio project for a Data Analyst role**, with optional modeling to demonstrate growth potential toward Data Science.
-
-
-## 📌 Overview
-This project explores the **Home Credit Default Risk dataset** to understand factors influencing loan default.  
-The primary focus is on **data cleaning, exploratory analysis, and insights**, with a baseline predictive model included as a bonus.
-
-The notebook demonstrates an end-to-end workflow:
-1. Load and inspect the dataset
-2. Explore and visualize data
-3. Handle missing values
-4. Encode categorical features
-5. Scale and split the data
-6. Train a baseline logistic regression model
-7. Evaluate performance with ROC AUC and ROC curve
-8. Interpret feature importance
-9. Summarize insights
+It’s designed to demonstrate core Data Analyst skills, with optional modeling to highlight growth potential toward Data Science.
 
 ---
-## 📓 Notebooks
 
-This project is organized into step-by-step Jupyter notebooks:
+## 📌 Project Overview  
+Using the **Home Credit Default Risk dataset** from Kaggle, this project explores factors that influence loan default. The focus is on:
+- Data cleaning  
+- Exploratory analysis  
+- Insight generation  
+- Baseline modeling (Logistic Regression)
 
-- [01 Data Loading](notebooks/01_data_loading.ipynb)  
-  *Load the dataset, inspect structure, and perform initial checks.*
+---
 
-- [02 Feature Engineering](notebooks/02_feature_engineering.ipynb)  
-  *Handle missing values, encode categorical variables, and prepare features.*
+## 📓 Workflow & Notebooks  
+The project is organized into step-by-step Jupyter notebooks:
 
-- [03 Model Preparation](notebooks/03_model_preparation.ipynb)  
-  *Scale features, split data, train a baseline logistic regression model, and evaluate with ROC AUC and feature importance.*
+| Notebook | Description |
+|----------|-------------|
+| [01 Data Loading](notebooks/01_data_loading.ipynb) | Load the dataset, inspect structure, and perform initial checks |
+| [02 Feature Engineering](notebooks/02_feature_engineering.ipynb) | Handle missing values, encode categorical variables, and prepare features |
+| [03 Model Preparation](notebooks/03_model_preparation.ipynb) | Scale features, split data, train a logistic regression model, and evaluate performance |
 
+---
 
-## 📊 Dataset
-- **Source**: Home Credit Default Risk dataset (Kaggle)
-- **Target variable**: `TARGET`  
+## 📊 Dataset Details  
+- **Source**: [Home Credit Default Risk](https://www.kaggle.com/c/home-credit-default-risk)  
+- **Target Variable**: `TARGET`  
   - `0` = Loan repaid  
   - `1` = Loan default  
 
 ---
 
-## 🔍 Exploratory Data Analysis (EDA)
-- Checked dataset structure, summary statistics, and class balance  
+## 🔍 Exploratory Data Analysis (EDA)  
+- Checked dataset structure and class balance  
 - Visualized missing values (top 20 features)  
 - Examined correlations with the target variable  
 
 ---
 
-## 🧹 Data Cleaning
+## 🧹 Data Cleaning  
 - Dropped columns with >40% missing values  
-- Imputed remaining missing values with a placeholder (`-999`)  
+- Imputed remaining missing values with placeholder (`-999`)  
 - Encoded categorical features:  
   - Binary → Label Encoding  
   - Multi-class → One-Hot Encoding  
 
 ---
 
-## ⚙️ Modeling
-- **Baseline model**: Logistic Regression  
-- **Scaling**: StandardScaler applied to all features  
-- **Evaluation metric**: ROC AUC  
+## ⚙️ Baseline Modeling  
+- **Model**: Logistic Regression  
+- **Scaling**: StandardScaler  
+- **Metric**: ROC AUC  
 
 **Results**:  
-- Logistic Regression ROC AUC ≈ *0.63*  
-- Indicates weak but non-random predictive power  
+- ROC AUC ≈ *0.63*  
+- Indicates weak but non-random predictive power
 
 ---
 
-## 📈 Visualizations
+## 📈 Visualizations  
 - Target distribution  
 - Missing values bar chart  
 - Correlation heatmap  
 - ROC curve  
-- Feature importance (logistic regression coefficients)  
+- Feature importance (logistic regression coefficients)
 
 ---
 
-## 💡 Key Insights
+## 💡 Key Insights  
 - Dataset is **imbalanced** (fewer defaults than non-defaults)  
 - Age (`DAYS_BIRTH`), income, and employment-related features are strong predictors  
-- Logistic regression provides a baseline but leaves room for improvement with tree-based models  
+- Logistic regression provides a baseline; tree-based models could improve performance
 
 ---
 
-## 🚀 Next Steps
+## 🚀 Next Steps  
 - Try advanced models (Random Forest, XGBoost, LightGBM)  
 - Apply hyperparameter tuning  
 - Address class imbalance (SMOTE, class weights)  
-- Engineer new features (ratios, interactions)  
+- Engineer new features (ratios, interactions)
 
 ---
 
-## 🧑‍💻 Skills Demonstrated
+## 🧑‍💻 Skills Demonstrated  
 - Data wrangling with **pandas**  
-- Exploratory analysis with **matplotlib** and **seaborn**  
+- EDA with **matplotlib** and **seaborn**  
 - Feature engineering and encoding  
 - Model training and evaluation with **scikit-learn**  
-- Communicating insights with visuals and markdown  
+- Communicating insights with visuals and markdown
 
 ---
 
-## 🙌 Closing Note
-This project demonstrates my ability to take a messy, real-world dataset and transform it into meaningful insights through **data cleaning, EDA, visualization, and baseline modeling**.  
-It is part of my **Data Analyst portfolio**, with room to expand into advanced modeling for Data Science roles.
-
-
-## 📁 Project File Structure
+## 📁 Project Structure
 
 ```text
 project1-home/
@@ -128,10 +118,15 @@ project1-home/
 │   ├── 01_data_loading.ipynb
 │   ├── 02_feature_engineering.ipynb
 │   └── 03_model_preparation.ipynb
-├── .gitignore
+├── sql_scripts/
+│   └── *.sql
+├── screenshots/
+│   └── *.png
 ├── README.md
 └── requirements.txt
+```
 
 ---
 
-
+## 🙌 Closing Note  
+This project demonstrates my ability to transform a messy, real-world dataset into actionable insights through **data cleaning, EDA, visualization, and baseline modeling**. It’s part of my **Data Analyst portfolio**, with room to expand into advanced modeling for Data Science roles.
