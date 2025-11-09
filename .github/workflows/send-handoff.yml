@@ -12,7 +12,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Read manifest
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Read manifest path
         id: read_manifest
         run: |
           echo "MANIFEST_PATH=handoffs/copilot-fe-test-20251109.json" >> $GITHUB_OUTPUT
@@ -22,7 +25,7 @@ jobs:
           RECEIVER_REPO_TOKEN: ${{ secrets.RECEIVER_REPO_TOKEN }}
         run: |
           MANIFEST_PATH="${{ steps.read_manifest.outputs.MANIFEST_PATH }}"
-          PAYLOAD=$(cat "$MANIFEST_PATH" | jq -c '.')
+          PAYLOAD=$(jq -c '.' "$MANIFEST_PATH")
           curl -X POST \
             -H "Authorization: token $RECEIVER_REPO_TOKEN" \
             -H "Accept: application/vnd.github.everest-preview+json" \
