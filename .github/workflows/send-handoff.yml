@@ -1,0 +1,30 @@
+name: Send Assistant Handoff to Gemini
+
+on:
+  push:
+    paths:
+      - 'handoffs/copilot-fe-test-20251109.json'
+
+jobs:
+  dispatch-handoff:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Read manifest
+        id: read_manifest
+        run: |
+          echo "MANIFEST_PATH=handoffs/copilot-fe-test-20251109.json" >> $GITHUB_OUTPUT
+
+      - name: Send repository_dispatch to Gemini receiver
+        env:
+          RECEIVER_REPO_TOKEN: ${{ secrets.RECEIVER_REPO_TOKEN }}
+        run: |
+          MANIFEST_PATH="${{ steps.read_manifest.outputs.MANIFEST_PATH }}"
+          PAYLOAD=$(cat "$MANIFEST_PATH" | jq -c '.')
+          curl -X POST \
+            -H "Authorization: token $RECEIVER_REPO_TOKEN" \
+            -H "Accept: application/vnd.github.everest-preview+json" \
+            https://api.github.com/repos/emron24/home-credit-clean/dispatches \
+            -d "{\"event_type\":\"assistant-handoff\",\"client_payload\":$PAYLOAD}"
