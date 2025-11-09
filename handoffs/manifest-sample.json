@@ -1,0 +1,11 @@
+﻿{
+    "id": "copilot-fe-20251108T202200Z",
+    "from": "copilot",
+    "task": "feature-engineering",
+    "artifact_path": "handoffs/copilot-fe-20251108T202200Z.zip",
+    "artifact_url": "https://github.com/PRODUCER_OWNER/PRODUCER_REPO/releases/download/v1/copilot-fe-20251108T202200Z.zip",
+    "checksum": "sha256:xxxxxxxx",
+    "required_action": "run-notebooks",
+    "priority": "high",
+    "created_at": "2025-11-08T20:22:00Z"
+}
