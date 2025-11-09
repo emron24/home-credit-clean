@@ -21,10 +21,17 @@ jobs:
           echo '${{ toJson(github.event.client_payload) }}' > handoff_payload.json
           
           PAYLOAD_JSON=$(cat handoff_payload.json)
-          ID=$(echo "$PAYLOAD_JSON" | jq -r '.id')
-          ARTIFACT_PATH=$(echo "$PAYLOAD_JSON" | jq -r '.artifact_path')
-          REQUIRED_ACTION=$(echo "$PAYLOAD_JSON" | jq -r '.required_action')
           
+          # FIX: Map manifest's 'handoff_id' to receiver's 'ID'
+          ID=$(echo "$PAYLOAD_JSON" | jq -r '.handoff_id')
+          
+          # FIX: Map manifest's 'artifact_url' to receiver's 'ARTIFACT_PATH'
+          ARTIFACT_PATH=$(echo "$PAYLOAD_JSON" | jq -r '.artifact_url')
+          
+          # FIX: Map metadata.required_action, defaulting to 'process' if absent
+          REQUIRED_ACTION=$(echo "$PAYLOAD_JSON" | jq -r '.metadata.required_action // "process"')
+          
+          # The null checks now use the new variables, which read the correct fields
           if [ "$ID" == "null" ] || [ "$ARTIFACT_PATH" == "null" ] || [ "$REQUIRED_ACTION" == "null" ]; then
             echo "Error: Missing critical fields in payload."
             exit 1
@@ -42,6 +49,7 @@ jobs:
           
       - name: Install dependencies (incl. papermill and jq)
         run: |
+          # Note: This will fail if requirements.txt does not exist or is empty
           pip install -r requirements.txt
           pip install papermill jq
 
