@@ -1,0 +1,85 @@
+name: Hand-off Receiver (Copilot -> Gemini)
+
+on:
+  repository_dispatch:
+    types: [assistant-handoff]
+
+jobs:
+  process_handoff:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.RECEIVER_REPO_TOKEN }} 
+
+      - name: Save and Parse Handoff Payload
+        id: parse
+        run: |
+          # The entire client_payload is passed as a JSON object in the event
+          # We save it to a file for clean processing
+          echo '${{ toJson(github.event.client_payload) }}' > handoff_payload.json
+          
+          PAYLOAD_JSON=$(cat handoff_payload.json)
+          ID=$(echo "$PAYLOAD_JSON" | jq -r '.id')
+          ARTIFACT_PATH=$(echo "$PAYLOAD_JSON" | jq -r '.artifact_path')
+          REQUIRED_ACTION=$(echo "$PAYLOAD_JSON" | jq -r '.required_action')
+          
+          if [ "$ID" == "null" ] || [ "$ARTIFACT_PATH" == "null" ] || [ "$REQUIRED_ACTION" == "null" ]; then
+            echo "Error: Missing critical fields in payload."
+            exit 1
+          fi
+
+          echo "ID=$ID" >> $GITHUB_OUTPUT
+          echo "ARTIFACT_PATH=$ARTIFACT_PATH" >> $GITHUB_OUTPUT
+          echo "STATUS_FILE=handoffs/status-$ID.json" >> $GITHUB_OUTPUT
+          echo "NOTEBOOK_OUTPUT=outputs/processed-$ID.ipynb" >> $GITHUB_OUTPUT
+
+      - name: Set up Python Environment and Cache
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          
+      - name: Install dependencies (incl. papermill and jq)
+        run: |
+          pip install -r requirements.txt
+          pip install papermill jq
+
+      - name: Execute Handoff Notebook (Smoke Test)
+        run: |
+          mkdir -p outputs
+          papermill notebooks/process-handoff.ipynb \
+            ${{ steps.parse.outputs.NOTEBOOK_OUTPUT }} \
+            -k python3 \
+            -p handoff_id "${{ steps.parse.outputs.ID }}" \
+            -p artifact_path "${{ steps.parse.outputs.ARTIFACT_PATH }}"
+
+      - name: Generate Status File (Success/Failure)
+        run: |
+          if [ $? -eq 0 ]; then
+            STATUS="completed"
+            SUMMARY="Successfully processed handoff ${{ steps.parse.outputs.ID }} and executed notebook."
+          else
+            STATUS="failed"
+            SUMMARY="Failure during processing of handoff ${{ steps.parse.outputs.ID }}. Check workflow logs for details."
+          fi
+          
+          # Use jq to build the final status file
+          jq -n \
+            --arg id "${{ steps.parse.outputs.ID }}" \
+            --arg status "$STATUS" \
+            --arg summary "$SUMMARY" \
+            --arg processed_at "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            --arg run_url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            '{id: $id, status: $status, summary: $summary, processed_at: $processed_at, workflow_run: $run_url}' \
+            > ${{ steps.parse.outputs.STATUS_FILE }}
+
+      - name: Commit Status File and Notebook Output
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "RECEIVER: Hand-off Status Update for ${{ steps.parse.outputs.ID }}"
+          branch: main
+          commit_user_name: Gemini Receiver Bot
+          commit_user_email: gemini-bot@actions.github.com
+          file_pattern: 'handoffs/status-*.json outputs/processed-*.ipynb'
+          token: ${{ secrets.RECEIVER_REPO_TOKEN }}
