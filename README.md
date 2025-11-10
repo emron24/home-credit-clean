@@ -128,8 +128,6 @@ project1-home/
 
 ---
 
----
-
 ## 🤖 Assistant Handoff Pipeline — Stability Report
 
 This section documents the successful implementation and debugging of a GitHub Actions workflow that automates notebook execution via repository dispatch.
