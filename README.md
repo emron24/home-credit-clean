@@ -80,6 +80,23 @@ The project is organized into step-by-step Jupyter notebooks:
 - ROC curve  
 - Feature importance (logistic regression coefficients)
 
+- --
+## 📊 Excel Dashboard
+
+Alongside the Python notebooks, I built an interactive Excel dashboard to visualize loan repayment behavior.  
+It includes five chart types with slicers for Occupation, Income Level, Marital Status, Gender, and Family Size.
+
+### Dashboard Features
+- Loan Status by Occupation Group (Clustered Column)
+- Loan Status by Age Group (Line Chart)
+- Income Level Distribution (Pie Chart)
+- Loan Status by Family Size Group (Stacked Bar Chart)
+- Income vs Credit Amount (Scatter Plot)
+
+### Files
+- `dashboards/loan_dashboard.xlsx` — Full interactive dashboard
+- `dashboards/screenshots/` — PNGs of each chart
+
 ---
 
 ## 💡 Key Insights  
