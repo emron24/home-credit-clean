@@ -1,6 +1,4 @@
-Absolutely, Emran — here’s a restructured and polished version of your README that’s recruiter-ready, clearly organized, and aligned with your portfolio goals. I’ve grouped related sections, improved flow, and added clarity while preserving your original content.
 
----
 
 # 🏦 Home Credit Risk Analysis  
 *A Portfolio Project for Data Analyst Roles*
