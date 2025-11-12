@@ -1,5 +1,8 @@
+
 # 🏦 Home Credit Risk Analysis  
 *A Portfolio Project for Data Analyst Roles*
+
+---
 
 ## 📢 Summary  
 This project showcases my ability to:
@@ -74,23 +77,29 @@ The project is organized into step-by-step Jupyter notebooks:
 - ROC curve  
 - Feature importance (logistic regression coefficients)
 
-- --
-## 📊 Excel Dashboard
+---
+## 📊 Excel & Power BI Dashboards
 
-Alongside the Python notebooks, I built an interactive Excel dashboard to visualize loan repayment behavior.  
-It includes five chart types with slicers for Occupation, Income Level, Marital Status, Gender, and Family Size.
+In addition to Python-based analysis, I built interactive dashboards using **Excel** and **Power BI** to visualize loan repayment behavior and demographic patterns.
 
-### Dashboard Features
-- Loan Status by Occupation Group (Clustered Column)
-- Loan Status by Age Group (Line Chart)
-- Income Level Distribution (Pie Chart)
-- Loan Status by Family Size Group (Stacked Bar Chart)
-- Income vs Credit Amount (Scatter Plot)
+### 📘 Excel Dashboard
+- Built with slicers for **Occupation**, **Income Level**, **Marital Status**, **Gender**, and **Family Size**
+- Includes:
+  - Clustered Column: Loan Status by Occupation Group
+  - Line Chart: Loan Status by Age Group
+  - Pie Chart: Income Level Distribution
+  - Stacked Bar: Loan Status by Family Size Group
+  - Scatter Plot: Income vs Credit Amount
 
-### Files
-- `dashboards/loan_dashboard.xlsx` — Full interactive dashboard
-- `dashboards/screenshots/` — PNGs of each chart
 
+### 📊 Power BI Dashboard
+- Interactive report built in Power BI Desktop
+- Visualizes:
+  - Loan default trends across age and income groups
+  - Credit amount distribution
+  - Occupation-based repayment behavior
+- 📁 File: `powerbi/home-credit-default.pbix`
+- 📸 Screenshots available in `powerbi/Screen-shot/`
 ---
 
 ## 💡 Key Insights  
@@ -120,21 +129,29 @@ It includes five chart types with slicers for Occupation, Income Level, Marital 
 ## 📁 Project Structure
 
 ```text
-project1-home/
-│
+PROJECT1-HOME/
+├── .github/workflows/
 ├── data/
-│   ├── raw/
-│   └── processed/
+│   ├── cleaned/
+│   └── raw/
+├── docs/
+├── excel/dashboards/
+│   ├── loan_dashboard/
+│   └── screenshots/
+├── handoffs/
+│   └── *.json
 ├── notebooks/
 │   ├── 01_data_loading.ipynb
 │   ├── 02_feature_engineering.ipynb
 │   └── 03_model_preparation.ipynb
-├── sql_scripts/
-│   └── *.sql
-├── screenshots/
-│   └── *.png
+├── outputs/
+├── powerbi/
+│   ├── home-credit-default.pbix
+│   └── Screen-shot/
+├── sql/
+├── requirements.txt
 ├── README.md
-└── requirements.txt
+└── .gitignore
 ```
 
 ---
