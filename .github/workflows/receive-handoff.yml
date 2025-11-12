@@ -10,8 +10,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-
+      
       - name: Save and Parse Handoff Payload
         id: parse
         run: |
