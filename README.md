@@ -78,6 +78,29 @@ The project is organized into step-by-step Jupyter notebooks:
 - Feature importance (logistic regression coefficients)
 
 ---
+## 📊 Excel & Power BI Dashboards
+
+In addition to Python-based analysis, I built interactive dashboards using **Excel** and **Power BI** to visualize loan repayment behavior and demographic patterns.
+
+### 📘 Excel Dashboard
+- Built with slicers for **Occupation**, **Income Level**, **Marital Status**, **Gender**, and **Family Size**
+- Includes:
+  - Clustered Column: Loan Status by Occupation Group
+  - Line Chart: Loan Status by Age Group
+  - Pie Chart: Income Level Distribution
+  - Stacked Bar: Loan Status by Family Size Group
+  - Scatter Plot: Income vs Credit Amount
+
+
+### 📊 Power BI Dashboard
+- Interactive report built in Power BI Desktop
+- Visualizes:
+  - Loan default trends across age and income groups
+  - Credit amount distribution
+  - Occupation-based repayment behavior
+- 📁 File: `powerbi/home-credit-default.pbix`
+- 📸 Screenshots available in `powerbi/Screen-shot/`
+---
 
 ## 💡 Key Insights  
 - Dataset is **imbalanced** (fewer defaults than non-defaults)  
