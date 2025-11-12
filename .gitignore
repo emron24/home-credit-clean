@@ -7,11 +7,26 @@ data/raw/
 *.dat
 *.ini
 *.exe
+*.xlsx
 
 # Ignore Python cache
 __pycache__/
 *.pyc
 
+# Ignore Jupyter notebook checkpoints
+*.ipynb_checkpoints/
+
+# Ignore environment files
+.env
+
 # Ignore VS Code settings
 .vscode/
-powerbi.rar
+
+# Ignore compressed files
+*.rar
+*.zip
+
+# Ignore Power BI and Tableau files
+*.pbix
+*.twb
+*.twbx
