@@ -88,7 +88,6 @@ It includes five chart types with slicers for Occupation, Income Level, Marital 
 - Income vs Credit Amount (Scatter Plot)
 
 ### Files
-- `dashboards/loan_dashboard.xlsx` — Full interactive dashboard
 - `dashboards/screenshots/` — PNGs of each chart
 
 ---
