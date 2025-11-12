@@ -80,6 +80,23 @@ The project is organized into step-by-step Jupyter notebooks:
 - ROC curve  
 - Feature importance (logistic regression coefficients)
 
+- --
+## 📊 Excel Dashboard
+
+Alongside the Python notebooks, I built an interactive Excel dashboard to visualize loan repayment behavior.  
+It includes five chart types with slicers for Occupation, Income Level, Marital Status, Gender, and Family Size.
+
+### Dashboard Features
+- Loan Status by Occupation Group (Clustered Column)
+- Loan Status by Age Group (Line Chart)
+- Income Level Distribution (Pie Chart)
+- Loan Status by Family Size Group (Stacked Bar Chart)
+- Income vs Credit Amount (Scatter Plot)
+
+### Files
+- `dashboards/loan_dashboard.xlsx` — Full interactive dashboard
+- `dashboards/screenshots/` — PNGs of each chart
+
 ---
 
 ## 💡 Key Insights  
@@ -127,6 +144,35 @@ project1-home/
 ```
 
 ---
+
+## 🤖 Assistant Handoff Pipeline — Stability Report
+
+This section documents the successful implementation and debugging of a GitHub Actions workflow that automates notebook execution via repository dispatch.
+
+### ✅ Status: Success
+
+After a series of cascading failures, we performed a full diagnostic and implemented four core fixes. The latest run completed successfully with no warnings or errors.
+
+#### 1. 🧠 Notebook Execution Fix (Critical)
+- **Issue**: `NameError: name 'null' is not defined` due to raw JSON accidentally injected into a code cell.
+- **Fix**: Rebuilt `notebooks/process-handoff.ipynb` programmatically to ensure clean structure and correct `parameters` tag for papermill.
+
+#### 2. ⚙️ Workflow Configuration & Dependencies
+- **Dependency Fix**: Added `papermill`, `ipykernel`, `jq`, and others to `requirements.txt` to ensure full environment setup.
+- **Payload Fix**: Corrected shell parsing logic to extract `client_payload.handoff_id` and other nested fields properly.
+
+#### 3. 🧹 Final Cleanup & Stability
+- **Warning Fix**: Removed unused `token: input` from `git-auto-commit-action` to eliminate workflow warnings.
+- **Git Conflict Resolution**: Resolved merge conflict caused by simultaneous status file commits and YAML updates.
+
+### 📘 Outcome
+The assistant-handoff pipeline now runs cleanly end-to-end:
+- Payload is parsed correctly
+- Notebook executes with injected parameters
+- Status file is committed to `main`
+
+This demonstrates CI/CD automation, notebook orchestration, and robust debugging — valuable skills for data engineering and production-grade analytics.
+
 
 ## 🙌 Closing Note  
 This project demonstrates my ability to transform a messy, real-world dataset into actionable insights through **data cleaning, EDA, visualization, and baseline modeling**. It’s part of my **Data Analyst portfolio**, with room to expand into advanced modeling for Data Science roles.
