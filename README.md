@@ -1,9 +1,5 @@
-
-
 # 🏦 Home Credit Risk Analysis  
 *A Portfolio Project for Data Analyst Roles*
-
----
 
 ## 📢 Summary  
 This project showcases my ability to:
