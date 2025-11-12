@@ -115,12 +115,10 @@ It includes five chart types with slicers for Occupation, Income Level, Marital 
 - Communicating insights with visuals and markdown
 
 ---
-
 ## 📁 Project Structure
 
-```text
+'''
 project1-home/
-│
 ├── data/
 │   ├── raw/
 │   └── processed/
@@ -128,13 +126,16 @@ project1-home/
 │   ├── 01_data_loading.ipynb
 │   ├── 02_feature_engineering.ipynb
 │   └── 03_model_preparation.ipynb
+├── dashboards/
+│   ├── screenshots/
+│   └── (Excel file hosted externally)
 ├── sql_scripts/
 │   └── *.sql
-├── screenshots/
-│   └── *.png
+├── requirements.txt
 ├── README.md
-└── requirements.txt
-```
+└── .gitignore
+'''
+
 
 ---
 
