@@ -1,0 +1,41 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "tags": [
+     "parameters"
+    ]
+   },
+   "outputs": [],
+   "source": [
+    "# Set default values for papermill to overwrite\n",
+    "handoff_id = 'default_id'\n",
+    "artifact_path = 'default_path'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Final smoke test\n",
+    "print(f\"Handoff ID: {handoff_id}\")"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "name": "python"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

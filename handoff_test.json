@@ -1,0 +1,12 @@
+{
+  "event_type": "assistant-handoff",
+  "client_payload": {
+    "handoff_id": "final-verification-test-01",
+    "from": "copilot-producer",
+    "task": "final-verification-fix",
+    "artifact_url": "https://github.com/PRODUCER/REPO/releases/latest/artifact.zip",
+    "metadata": {
+      "required_action": "run-notebooks"
+    }
+  }
+}
