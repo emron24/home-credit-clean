@@ -187,4 +187,3 @@ This demonstrates CI/CD automation, notebook orchestration, and robust debugging
 
 ## 🙌 Closing Note  
 This project demonstrates my ability to transform a messy, real-world dataset into actionable insights through **data cleaning, EDA, visualization, and baseline modeling**. It’s part of my **Data Analyst portfolio**, with room to expand into advanced modeling for Data Science roles.
-make it perfect
